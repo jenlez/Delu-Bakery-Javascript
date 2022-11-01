@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+.main {
+    height: 100vh;
+    background-image: url("../img/croissants-on-grey.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.textoPrincipal{
+    padding-top: 100px;
+    padding-left: 50px;
+}
+
+.titulo {
+    color: rgb(37, 35, 35);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 90px;
+}
+
+.subtitulo {
+    color:rgb(37, 35, 35);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+}
+.parrafo {
+    color:rgb(37, 35, 35);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
