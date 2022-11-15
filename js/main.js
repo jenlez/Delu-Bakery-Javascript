@@ -1,87 +1,102 @@
-let ingreseNombre = prompt ("Ingrese su nombre");
-alert("Bienvenid@ "+ ingreseNombre + " para ver nuestras promociones del dia acceda a su cuenta.")
+//Desafío Arrays
 
-let usuario1 = "jennifer"
-let contrasenia1= 1234
-
-let usuario2 = "angela"
-let contrasenia2 = 1234
-
-let usuario3 = "juan"
-let contrasenia3 = 1234
-
-let ingreseUsuario = prompt("Ingrese su usuario").toLowerCase()
-let ingreseContrasenia = prompt("Ingrese Contraseña").toLowerCase()
-
-if (ingreseUsuario == usuario1 && ingreseContrasenia == contrasenia1 ||
-    ingreseUsuario == usuario2 && ingreseContrasenia == contrasenia2 ||
-    ingreseUsuario == usuario3 && ingreseContrasenia == contrasenia3 ) {
-    alert ("Acceso Correcto " + ingreseUsuario)
-}else {
-    alert ("Acceso Incorrecto")
-}
-
-alert ("Ingrese la promo que desea llevar, para salir ingrese 0")
-
-let seleccionProductos = Number(prompt (
-    "1-Medialunas X 12 Unidades $880      2-Croissant Francés X 6 Unidades $1080          3-Chipa x 6 unidades $750           4-Palitos de queso x 8 unidades $820         0-Salir"))
-let seleccionarCantidad
-let total = 0
-
-function cantidad(cant,precio) {
-    return cant*precio
-    
-}
-while (seleccionProductos != 0 ) {
-    switch (seleccionProductos) {
-        case 1:
-            seleccionarCantidad= Number(prompt("el producto seleccionado es Medialunas X 12 Unidades, indique la cantidad"))
-            total += cantidad(seleccionarCantidad, 1080)
-            break;
-        case 2:
-            seleccionarCantidad= Number(prompt("el producto seleccionado es Croissant Francés X 6 Unidades, indique la cantidad"))
-            total += cantidad(seleccionarCantidad, 1080)
-            break;
-        case 3:
-            seleccionarCantidad= Number(prompt("el producto seleccionado es Chipa x 6 unidades, indique la cantidad"))
-            total += cantidad(seleccionarCantidad, 1080)
-            break;
-        case 4:
-            seleccionarCantidad= Number(prompt("el producto seleccionado es Palitos de queso x 8 unidades , indique la cantidad"))
-            total += cantidad(seleccionarCantidad, 1080)
-            break;
-    
-        default: 
-            break;
+class producto {
+    constructor(id,nombre, descripcion, precio){
+        this.id = id;
+        this.nombre = nombre.toUpperCase();
+        this.descripcion = descripcion;
+        this.precio = Number(precio);
     }
-    seleccionProductos = Number(prompt (
-        "1-Medialunas X 12 Unidades $880      2-Croissant Francés X 6 Unidades $1080          3-Chipa x 6 unidades $750           4-Palitos de queso x 8 unidades $820         0-Salir"))
+}
+const panaderia = []
+panaderia.push(new producto(1,"Chipa", "10 unidades aprox (250 gr) 250gr", 550))
+panaderia.push(new producto(2,"Pan de campo", "Peso aproximado 500gr", 470))
+panaderia.push(new producto(3,"Pan molde", "Peso aproximado 650gr", 540))
+
+class factura{
+    constructor(id,nombre, descripcion, precio){
+        this.id = id;
+        this.nombre = nombre.toUpperCase();
+        this.descripcion = descripcion;
+        this.precio = Number(precio);
+    }
+}
+const facturas = []
+facturas.push(new factura(4,"Roll de canela", "x1 unidad", 420))
+facturas.push(new factura(5,"Medialunas", "x6 unidades", 600))
+
+class torta {
+    constructor(id,nombre, descripcion, precio){
+        this.id = id;
+        this.nombre = nombre.toUpperCase();
+        this.descripcion = descripcion;
+        this.precio = Number(precio);
+    }
+}
+const tortas = []
+tortas.push(new torta(6,"Brownie", "Porcion con nuez o ciruela", 290))
+tortas.push(new torta(7,"Chocotorta", "Porcion con chocolate rallado", 640))
+
+const carrito = []
+
+alert("Hola, Bienvenido a Delu Bakery - Panaderia artesanal")
+
+let seleccion = prompt("Desea ordenar algun producto el dia de hoy? \n porfavor ingresa si o no")
+
+while(seleccion != "si" && seleccion != "no") {
+    alert("Por favor ingresa si o no")
+    seleccion = prompt("Desea ordenar algo, \n Si o no")
 }
 
-alert("el total de la compra es de: " + total)
+if(seleccion == "si") {
+    alert("A continuación nuestros productos, puedes seleccionarlos por nombre o numero de lista");
+    let seccionPanaderia = panaderia.map((orden) => orden.id + " - " + orden.nombre + " - " + orden.descripcion + "\n" + "Precio: " + orden.precio + "$");
 
-metodoDePago()
+    let seccionFacturas = facturas.map((orden) =>  orden.id + " - " +  orden.nombre + " - " + orden.descripcion + "\n" + "Precio: " + orden.precio + "$");
 
-function metodoDePago() {
-    let metodo = prompt("ingrese el metodo de pago, 1- tarjeta o 2-efectivo" )
-    if (metodo == "tarjeta"||"1") {
-      total *= 1.1
-      alert("El total es: "+ total);
-    }else if ( metodo == "efectivo"||"2") {
-      total -= 200
-      alert("Tienes un descuento de $200, el total es: " + total)
-    }   
+    let seccionTortas = tortas.map((orden) =>  orden.id + " - " +  orden.nombre + " - " + orden.descripcion + "\n" + "Precio: " + orden.precio + "$");
+
+    alert("PANADERIA \n" + seccionPanaderia.join("\n") + "\n" + "\n FACTURAS \n" + seccionFacturas.join("\n") + "\n" + "\n TORTAS \n" + seccionTortas.join("\n"));
+
+    console.log("PANADERIA \n" + seccionPanaderia.join("\n") + "\n" + "\n FACTURAS \n" + seccionFacturas.join("\n") + "\n" + "\n TORTAS \n" + seccionTortas.join("\n"));
+
+} else if (seleccion == "no") {
+    alert("Gracias por venir, hasta pronto!!")
+}
+
+const orden = Array.prototype.concat(panaderia, facturas, tortas)
+
+while(seleccion = "si" && seleccion != "no") {
+    let prod = prompt("Agrega un producto a tu carrito \n nombre o numero de lista").toUpperCase()
+    let precio = 0
     
+    for(const i in orden) {
+        if(prod == orden[i].nombre || prod == orden[i].id) {
+            precio = Number(orden[i].precio)
+        } //else if(prod !== orden[i].nombre) {
+        //     alert("No tenemos ese producto") 
+        // }
+    }
+
+    let unidades = Number(prompt("Cuantas unidades quiere llevar?"))
+    carrito.push({prod, unidades, precio})
+    
+    seleccion = prompt("Desea seguir comprando?")
+
+    while(seleccion === "no") {
+        alert("Gracias por la compra, Hasta pronto!")
+        carrito.forEach((carritoFinal) => {
+            alert(`Producto: ${carritoFinal.prod},\nUnidades: ${carritoFinal.unidades},\nTotal a pagar por producto: $${carritoFinal.unidades * carritoFinal.precio}`)
+            console.log(`Producto: ${carritoFinal.prod}, Unidades: ${carritoFinal.unidades}, Total a pagar por producto: $${carritoFinal.unidades * carritoFinal.precio}`)
+        })
+        break
+    } if (seleccion != "si" && seleccion != "no") {
+        alert("Por favor ingresa si o no")
+        seleccion = prompt("Desea seguir comprando?")
+    }
 }
 
-alert ("Gracias por tu compra, vuelve pronto.")
-
-
-
-
-
-
-
-
-
-
+const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
+alert(`El total a pagar por su compra es: $${total}`)
+console.log(`El total a pagar por su compra es: $${total}`
+)
