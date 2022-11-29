@@ -1,0 +1,51 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+// PALETA DE COLORES ----
+$rojo: #d93027;
+$blanco: #f5f5f5;
+$gris: #787373;
+$lila: #e0d5d5;
+$transparencia: rgba(158, 158, 158, 0.137);
+
+
+/* === GENERAL === */
+body {
+  color: $gris;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.boton {
+  font-size: 18px;
+  font-family: sans-serif;
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  align-self: center;
+  color: $blanco;
+  background-color: $gris;
+  border-radius: 15px 15px 15px 15px;
+  border-color: $blanco;
+  transition: .5s ease;
+  &:hover{
+    background: $rojo;
+    color: #E9EEF2;
+  }
+  &:active{
+      background: #e56542;
+  }
+}
+
+p {
+  margin: 0px;
+  font-size: 20px;
+}
+
+ol,
+ul {
+  padding-left: 0px;
+}
