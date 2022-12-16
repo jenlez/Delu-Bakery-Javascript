@@ -1,0 +1,58 @@
+[
+    {
+        "id":"1",
+        "nombre":"Chipa",
+        "descripcion": "Base de almidón/fécula de mandioca y queso semiduro",
+        "precio": 55,
+        "foto": "../media/chipa.jpg"
+    },
+    {
+        "id":"2",
+        "nombre":"Pan de Chocolate",
+        "descripcion": "Elaborado con la masa del croissant y relleno con barritas de chocolate belga",
+        "precio": 380,
+        "foto": "../media/Pan-de-Chocolate.jpg"
+    },
+    {
+        "id":"3",
+        "nombre":"Croissant",
+        "descripcion": "Croissant francés de manteca, con masa hojaldrada",
+        "precio": 170,
+        "foto": "../media/Croissant.jpg"
+    },
+    {
+        "id":"4",
+        "nombre":"Croissant au fromage",
+        "descripcion": "Croissant francés, gratinado con queso reggiano.",
+        "precio": 230,
+        "foto": "../media/Croissant-au-fromage.jpg"
+    },
+    {
+        "id":"5",
+        "nombre":"Scon",
+        "descripcion": "Scon de queso parmessano. Te lo recomendamos caliente.",
+        "precio": 170,
+        "foto": "../media/Scon.jpg"
+    },
+    {
+        "id":"6",
+        "nombre":"Panneau au pomme",
+        "descripcion": "Factura danesa rellena de manzana, canela y nuez.",
+        "precio": 370,
+        "foto": "../media/Panneau-au-pomme.jpg"
+    },
+    {
+        "id":"7",
+        "nombre":"Medialuna dulce",
+        "descripcion": "Medialuna de manteca",
+        "precio": 155,
+        "foto": "../media/Medialuna-dulce.jpg"
+    },
+    {
+        "id":"8",
+        "nombre":"Factura hojaldre",
+        "descripcion": "Masa hojaldreada y crema pastelera.",
+        "precio": 130,
+        "foto": "../media/Factura-hojaldre.jpg"
+    }
+]
